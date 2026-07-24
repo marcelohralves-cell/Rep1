@@ -134,7 +134,7 @@ img{max-width:100%;display:block}
 .wa-float svg{width:28px;height:28px;fill:#fff}
 
 /* Nav */
-.nv{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
+.nv{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;transition:all .4s}.nv-brand{display:flex;align-items:center;gap:10px;text-decoration:none}.nv-brand:hover{text-decoration:none}.nv-emblem{height:32px;width:auto;display:block;flex:none}
 .nv.s{background:rgba(248,245,240,.96);backdrop-filter:blur(8px)}
 .nv.s .nb,.nv.s .nl span{color:var(--tx)}.nb,.nl span{color:var(--bg);transition:color .4s}
 .nl{display:flex;gap:22px}.nl span{font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
@@ -299,7 +299,7 @@ body:has(.mb-toggle:checked){overflow:hidden}
 
 <!-- Nav -->
 <nav class="nv" id="nav">
-  <div class="lb nb" style="font-size:12px">Recanto das Seriemas</div>
+  <a href="index.html" class="nv-brand" aria-label="Recanto das Seriemas — início"><img src="images/brand/emblema-seriema.png" alt="" width="39" height="32" class="nv-emblem"><span class="lb nb" style="font-size:12px">Recanto das Seriemas</span></a>
   <div class="nv-right">
     <div class="nl">
       <a href="parrilla-sao-pedro-sp.html"><span>Parrilla</span></a>
