@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://recantodasseriemas.com.br/sitemap.xml
