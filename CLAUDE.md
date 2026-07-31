@@ -52,7 +52,7 @@ Cada item abaixo já foi removido do site em correções anteriores. Nenhum pode
 - Numeradas **Suite 1 a Suite 6** apenas
 - Os nomes de variedades de uva foram aposentados em abril/2026
 - Podem retornar quando o vinhedo produzir
-- Todas têm varanda; ratings: 4.98/5 · 91 reviews · Superhost (Airbnb); 9.6 Booking.com
+- Todas têm varanda; ratings: 4.98/5 · **121 reviews** · Superhost (Airbnb); 9.6 Booking.com — soma verificada dos 6 anúncios separados (jul/2026)
 
 ## 6 · Localização (dados factuais)
 
@@ -97,7 +97,8 @@ Para fotos de **eventos**:
 
 - Sempre validar com Rich Results Test **antes** de push
 - `itemReviewed` em AggregateRating exige objeto aninhado (LodgingBusiness, Restaurant, EventVenue) — não string
-- Rating real: **4.98 · 91 reviews** (Airbnb · maio/2026)
+- Rating real: **4.98 · 121 reviews** (Airbnb · jul/2026 — soma dos 6 anúncios individuais)
+- **Nunca inventar `aggregateRating`, `ratingCount` ou `starRating`.** Só publicar número com fonte rastreável e conferível. Dado estruturado sem lastro é motivo de ação manual do Google.
 - Nunca adicionar meta `keywords` — Google ignora desde 2009
 - Cada página precisa de `og:image` (1200×630 mínimo)
 - Toda página precisa de hamburger menu CSS-only no mobile
@@ -109,6 +110,7 @@ Para fotos de **eventos**:
 - Reintroduzir qualquer termo da seção 2
 - Atribuir produção do pão ao Recanto
 - Incluir Marcelo ou Marco Aurélio em texto ou foto
+- **Rodar `git add -A` ou `git add .`** — sempre listar os caminhos explicitamente (`git add index.html images/suites/foo.jpg`). Ver causa raiz abaixo.
 - Usar shallow clone (`--depth 1`) — limita visibilidade do repo
 - Pular `git pull origin main` após clone — sessões paralelas tornam clones obsoletos
 - Publicar Reels via API do Instagram (instável; publicação manual via app é o padrão)
@@ -118,6 +120,8 @@ Para fotos de **eventos**:
 Antes de qualquer `git push`, verificar:
 
 - [ ] **Integridade HTML — OBRIGATÓRIO** — toda página modificada deve ter exatamente 1 `</html>` e 1 `</body>`. Rodar: `for f in *.html; do h=$(grep -c "</html>" "$f"); b=$(grep -c "</body>" "$f"); [ "$h" = "1" ] && [ "$b" = "1" ] || echo "BROKEN: $f"; done` — qualquer output não-vazio aborta o push.
+- [ ] **Nenhuma deleção acidental — OBRIGATÓRIO** — rodar `git status --short | grep '^ *D'` e conferir que toda deleção listada é intencional. Qualquer deleção não planejada aborta o push.
+- [ ] **Referências locais íntegras** — rodar `python3 tools/check_links.py`. Exit code diferente de 0 aborta o push.
 - [ ] Nenhum termo da seção 2 reintroduzido (rodar `grep -ri` no repo)
 - [ ] Atribuição do pão correta em todas as menções
 - [ ] Marcelo e Marco Aurélio ausentes em texto e fotos
@@ -126,6 +130,8 @@ Antes de qualquer `git push`, verificar:
 - [ ] `og:image` presente em todas as páginas modificadas
 - [ ] Imagens otimizadas: max 1400px, quality 80, EXIF transposed
 - [ ] Nenhuma referência a foto rejeitada (s1/s3/s4-interior, s3-porta-janela, s2-fachada, s1-varanda)
+
+**Causa raiz da proibição de `git add -A`:** commit `a9d931e` (24/jul/2026), intitulado "Add brand emblem to nav header across all pages", **apagou 410 arquivos** — toda a árvore `images/`, mais `robots.txt` e `sitemap.xml`. A sessão rodou `git add -A` sobre um clone parcial: o git interpretou os arquivos ausentes no disco como deleções intencionais e as versionou. O site ficou **6 dias em produção sem nenhuma imagem** e sem sitemap, sem que ninguém percebesse. Restaurado no commit `9c8a76e` (31/jul/2026). Duas travas foram criadas: a checagem de deleções no checklist acima e o verificador `tools/check_links.py`.
 
 **Causa raiz da regra de integridade HTML:** push v5.2 (commit `96081e6`, maio/2026) escreveu 3 de 4 HTMLs truncados sem closing tags. Bug só foi pego porque a página `eventos-casamento` apresentava sintoma visível em produção. O checklist anterior validava conteúdo (grep de termos) mas não integridade estrutural.
 

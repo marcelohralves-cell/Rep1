@@ -1,0 +1,79 @@
+name: Verificacao de integridade do site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # toda segunda-feira, 09h00 BRT (12h00 UTC)
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  # ---------------------------------------------------------------
+  # 1) PRE-DEPLOY — roda em todo push/PR, sem rede, em segundos.
+  #    E a barreira que teria pego o commit a9d931e (24/07/2026).
+  # ---------------------------------------------------------------
+  repo-check:
+    name: Referencias locais existem no repo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Conferir todo src/href local
+        run: python3 tools/check_links.py --root .
+
+  # ---------------------------------------------------------------
+  # 2) POS-DEPLOY / SEMANAL — bate HTTP no site publicado.
+  # ---------------------------------------------------------------
+  live-check:
+    name: Site publicado responde 200
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Aguardar propagacao do GitHub Pages
+        if: github.event_name == 'push'
+        run: sleep 150
+
+      - name: Checar URLs em producao
+        id: live
+        run: |
+          set +e
+          python3 tools/check_links.py --root . --live | tee /tmp/live.log
+          echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      - name: Abrir issue se houver quebra
+        if: steps.live.outputs.status != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITULO="Site com URLs quebradas — $(date -u +'%d/%m/%Y %H:%M UTC')"
+          {
+            echo "Verificacao automatica encontrou URLs fora do ar em https://recantodasseriemas.com.br"
+            echo ""
+            echo "Disparado por: \`${{ github.event_name }}\` · commit \`${{ github.sha }}\`"
+            echo ""
+            echo '```'
+            cat /tmp/live.log
+            echo '```'
+            echo ""
+            echo "Acao: conferir se algum commit recente apagou arquivos de \`images/\`."
+            echo "Para restaurar: \`git checkout <commit_bom> -- images\`"
+          } > /tmp/corpo.md
+          gh issue create --title "$TITULO" --body-file /tmp/corpo.md
+
+      - name: Falhar o job
+        if: steps.live.outputs.status != '0'
+        run: exit 1
