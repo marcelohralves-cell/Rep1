@@ -30,19 +30,19 @@ Cada item abaixo já foi removido do site em correções anteriores. Nenhum pode
 
 | Produto | Origem real | Como citar |
 |---|---|---|
-| Queijo fresco | Produção própria no Recanto | Citar livremente |
+| Queijo fresco | Produção própria no Recanto, ainda não regularizada na vigilância sanitária | **NÃO citar no site** até a regularização. No cardápio aparece só como item, sem "caseiro", "da casa", "artesanal", "feito aqui" ou "produção própria". Não vender para levar |
 | Geleias, doces | Produção própria no Recanto | Citar livremente |
-| Pão de fermentação natural | Fornecido por Milene (cunhada do Marcelo) | "Pão de fermentação natural artesanal" — nunca dizer que é feito no Recanto |
+| Pão de fermentação natural | Fornecedor externo | "Pão de fermentação natural artesanal" — nunca dizer que é feito no Recanto |
 | Pizzas, sopas, sanduíches, massas (jantar opcional) | Produção interna do Recanto | Citar como "jantar opcional para hóspedes" |
 
-**Regra de ouro do pão:** nunca usar verbos que sugiram produção no Recanto ("fazemos", "produzimos", "saído do forno aqui"). Sempre passivo/atributo: "pão de fermentação natural artesanal" ou, com atribuição explícita, "pão de fermentação natural da Milene".
+**Regra de ouro do pão:** nunca usar verbos que sugiram produção no Recanto ("fazemos", "produzimos", "saído do forno aqui"). Sempre passivo/atributo: "pão de fermentação natural artesanal". Não citar quem faz o pão.
 
 ## 4 · Rostos públicos da marca
 
 | Pessoa | Aparição pública |
 |---|---|
 | Márcio (irmão) + Tereza (esposa) | Citar livremente como anfitriões |
-| Milene (cunhada) | Aparece apenas como "cunhada fornecedora de pães" |
+| Milene (cunhada) | **NÃO** citar no site (removida em 2026-10) |
 | Marcelo | **NUNCA** aparecer (nome, foto, citação) |
 | Marco Aurélio | **NUNCA** aparecer (nome, foto, citação) |
 | Marina (mãe) + Maurício (pai, in memoriam) | Reservados para storyline de cafezal/herança apenas |
