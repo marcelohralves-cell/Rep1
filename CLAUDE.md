@@ -10,6 +10,8 @@ Documento de restrições não-negociáveis para o repositório **marcelohralves
 - **Domínio:** recantodasseriemas.com.br
 - **Instagram:** @seriemasparrilla
 - **WhatsApp:** (11) 99112-4853
+- **Canais de reserva:** somente Airbnb e canal direto (WhatsApp, vindo de redes sociais e site). **Não trabalhamos com Booking** — não citar Booking em lugar nenhum (out/2026)
+- **Links wa.me:** nunca sem texto. Sempre mensagem pronta com o tipo (mesa / suíte / evento / fim de semana), campos de data e pessoas e a origem no fim: `(ref: site-<página>)`, `(ref: ig)`, `(ref: google)`
 - **Posicionamento:** Retiro gastronômico completo na Serra do Itaqueri, São Pedro/SP, 990m de altitude
 - **4 pilares:** Fogo & Técnica · Terra & Vinhedo · Lugar & Memória · Ficar & Descansar
 
@@ -52,7 +54,7 @@ Cada item abaixo já foi removido do site em correções anteriores. Nenhum pode
 - Numeradas **Suite 1 a Suite 6** apenas
 - Os nomes de variedades de uva foram aposentados em abril/2026
 - Podem retornar quando o vinhedo produzir
-- Todas têm varanda; ratings: 4.98/5 · **121 reviews** · Superhost (Airbnb); 9.6 Booking.com — soma verificada dos 6 anúncios separados (jul/2026)
+- Todas têm varanda e rede. **A Suíte 6 não tem vista para o vale**: nunca dizer "todas as suítes com vista" (a vista é da propriedade: piscina, gramado, varanda das suítes que têm); ratings: 4.98/5 · **121 reviews** · Superhost (Airbnb) — soma verificada dos 6 anúncios separados (jul/2026)
 
 ## 6 · Localização (dados factuais)
 
