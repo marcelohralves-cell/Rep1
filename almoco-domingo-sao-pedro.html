@@ -21,14 +21,14 @@
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Seriemas Parrilla",
-  "description": "Parrilla de lenha na Serra do Itaqueri, São Pedro SP. Almoço aos sábados e domingos com cortes nobres e costelinha defumada.",
+  "description": "Parrilla de lenha na Serra do Itaqueri, São Pedro SP. Almoço aos sábados, domingos e feriados com cortes nobres e costelinha defumada.",
   "url": "https://recantodasseriemas.com.br/almoco-domingo-sao-pedro.html",
   "servesCuisine": ["Parrilla", "Churrasco Argentino", "Brasileira"],
   "menu": "https://recantodasseriemas.com.br/cardapio.html",
   "telephone": "+5511991124853",
   "address": {"@type": "PostalAddress", "streetAddress": "São Pedro", "addressLocality": "São Pedro", "addressRegion": "SP", "postalCode": "13524-899", "addressCountry": "BR"},
   "geo": {"@type": "GeoCoordinates", "latitude": -22.4313938, "longitude": -47.9105917},
-  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "12:00", "closes": "16:00"}],
+  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday","PublicHolidays"], "opens": "12:00", "closes": "16:00"}],
   "priceRange": "$$",
   "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.98", "bestRating": "5", "reviewCount": "121"}
 }
@@ -214,7 +214,7 @@ body:has(.mb-toggle:checked){overflow:hidden}
     <img src="images/food/costela-batatas-forno.jpg" alt="Costela assada no forno a lenha com batatas — almoço domingo São Pedro SP" loading="lazy">
   </div>
   <div class="wrap">
-    <p><strong>Funcionamento:</strong> sábados e domingos, das 12h às 16h.</p>
+    <p><strong>Funcionamento:</strong> sábados, domingos e feriados, das 12h às 16h.</p>
     <p><strong>Reserve com antecedência:</strong> o restaurante costuma lotar, principalmente aos domingos.</p>
     <p style="margin-top:16px"><a href="cardapio.html" style="color:var(--terracotta);font-weight:600;text-decoration:none;font-size:13px;letter-spacing:1px;text-transform:uppercase">Ver cardápio completo →</a></p>
   </div>
