@@ -54,7 +54,7 @@ Cada item abaixo já foi removido do site em correções anteriores. Nenhum pode
 - Numeradas **Suite 1 a Suite 6** apenas
 - Os nomes de variedades de uva foram aposentados em abril/2026
 - Podem retornar quando o vinhedo produzir
-- Todas têm varanda e rede. **A Suíte 6 não tem vista para o vale**: nunca dizer "todas as suítes com vista" (a vista é da propriedade: piscina, gramado, varanda das suítes que têm); ratings: 4.98/5 · **121 reviews** · Superhost (Airbnb) — soma verificada dos 6 anúncios separados (jul/2026)
+- Todas têm varanda e rede. **Só as Suítes 1 a 4 têm vista para o vale** (5 e 6 não): nunca dizer "todas as suítes com vista" (a vista é da propriedade: piscina, gramado e a varanda das Suítes 1–4). No Airbnb o café da manhã **não** está incluso na diária (out/2026); ratings: 4.98/5 · **121 reviews** · Superhost (Airbnb) — soma verificada dos 6 anúncios separados (jul/2026)
 
 ## 6 · Localização (dados factuais)
 
